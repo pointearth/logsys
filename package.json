@@ -1,0 +1,40 @@
+{
+  "name": "logsys",
+  "version": "1.0.0",
+  "description": "Simon study node.js web application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pointearth/logsys.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Simon Cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pointearth/logsys/issues"
+  },
+  "homepage": "https://github.com/pointearth/logsys#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "bcryptjs": "*",
+    "connect-flash": "*",
+    "express-messages": "*",
+    "express-handlebars": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
+  }
+}
