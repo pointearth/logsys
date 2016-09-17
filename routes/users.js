@@ -65,15 +65,17 @@ router.post('/login'
 });
 
 // logout 
-router.get('/logout', function(req,res){
-	res.render('logout');
+
+router.get('/logout',function(req,res){
+	req.logout();
+	req.flash('success_msg','You are logged out!');
+	res.redirect('/users/login');
 });
 
 ///----------------------------------
-pass
 passport.use(new LocalStrategy(
 	function(username,password,done){
-		User.getUserByUsername({username:username},function(err,user){
+		User.getUserByUsername(username,function(err,user){
 			if (err) return done(err);
 			if (!user){
 				return done(null,false,{message:'Incorrect username.'});
@@ -88,6 +90,16 @@ passport.use(new LocalStrategy(
 		});
 	}
 	));
+
+
+passport.serializeUser(function(user,done){
+	done(null,user.id);
+})
+passport.deserializeUser(function(id,done){
+	User.getUserById(id,function(err,user){
+		done(err,user);
+	})
+})
 
 
 module.exports = router;
